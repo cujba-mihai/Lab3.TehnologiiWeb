@@ -5,5 +5,10 @@
         public int ID { get; set; }
         public string Nume { get; set; }
         public string Materie { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ID} - {Nume} - {Materie}";
+        }
     }
 }

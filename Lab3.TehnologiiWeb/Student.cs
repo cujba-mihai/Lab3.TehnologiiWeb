@@ -5,6 +5,11 @@
         public int ID { get; set; }
         public string Nume { get; set; }
         public int GrupaID { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ID} - {Nume}";
+        }
     }
 
 
