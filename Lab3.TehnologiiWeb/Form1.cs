@@ -28,8 +28,21 @@ namespace Lab3.TehnologiiWeb
             comboBox1.Items.AddRange(new string[] {
                 "Toți studenții din grupa 1",
                 "Profesorii care predau studenții din anul curent",
-                // ... Add the rest of the query descriptions here
-         });
+                "Studenții grupați după grupă",
+                "Numărul de studenți per grupă",
+                "Studenți și grupele lor",
+                "Profesori și numărul de studenți",
+                "Studenți cu nume lung",
+                "Studenți și lungimea numelui de familie",
+                "Studenți și profesori ordonați",
+                "Numărul de studenți cu nume scurt",
+                "Primii trei studenți ordonați după nume",
+                "Studenți fără primul",
+                "Studenți cu litera A în nume",
+                "Profesori cu cel puțin doi studenți",
+                "Studenți cu cel puțin un coleg"
+            });
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,15 +63,15 @@ namespace Lab3.TehnologiiWeb
                     break;
                 case 3:
                     var numarStudentiPerGrupa = NumarStudentiPerGrupa();
-                    DisplayResult((IEnumerable<object>)numarStudentiPerGrupa);
+                    DisplayResult(numarStudentiPerGrupa.Cast<object>());
                     break;
                 case 4:
                     var studentiSiGrupeleLor = StudentiSiGrupeleLor();
-                    DisplayResult((IEnumerable<object>)studentiSiGrupeleLor);
+                    DisplayResult(studentiSiGrupeleLor.Cast<object>());
                     break;
                 case 5:
                     var profesoriSiNumarulDeStudenti = ProfesoriSiNumarulDeStudenti();
-                    DisplayResult((IEnumerable<object>)profesoriSiNumarulDeStudenti);
+                    DisplayResult(profesoriSiNumarulDeStudenti.Cast<object>());
                     break;
                 case 6:
                     var studentiCuNumeLung = StudentiCuNumeLung();
@@ -66,11 +79,11 @@ namespace Lab3.TehnologiiWeb
                     break;
                 case 7:
                     var studentiSiLungimeaNumeFamilie = StudentiSiLungimeaNumeFamilie();
-                    DisplayResult((IEnumerable<object>)studentiSiLungimeaNumeFamilie);
+                    DisplayResult(studentiSiLungimeaNumeFamilie.Cast<object>());
                     break;
                 case 8:
                     var studentiSiProfesoriOrdonati = StudentiSiProfesoriOrdonati();
-                    DisplayResult((IEnumerable<object>)studentiSiProfesoriOrdonati);
+                    DisplayResult(studentiSiProfesoriOrdonati.Cast<object>());
                     break;
                 case 9:
                     var numarStudentiCuNumeScurt = NumarStudentiCuNumeScurt();
@@ -105,12 +118,12 @@ namespace Lab3.TehnologiiWeb
         private void DisplayResult(IEnumerable<object> items)
         {
             listBoxStudenti.Items.Clear();
-
             foreach (var item in items)
             {
                 listBoxStudenti.Items.Add(item.ToString());
             }
         }
+
 
 
 
